@@ -3,7 +3,7 @@ class Car:
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
-    pass
+
 
 
 class CarWashStation:
@@ -28,13 +28,13 @@ class CarWashStation:
 
 
 
-    def serve_cars(self, car: list):
+    def serve_cars(self, cars: list):
             income = 0.0
-            for car in car:
+            for car in cars:
                 if car.clean_mark < self.clean_power:
                     price = self.calculate_washing_price(car)
+                    self.wash_single_car(car)
                     income += price
-
             return income
 
     def rate_service(self, new_rating):
